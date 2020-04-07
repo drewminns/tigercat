@@ -1,0 +1,17 @@
+{
+  "name": "build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up",
+    "build": "docker-compose build",
+    "stop": "docker-compose stop",
+    "clean": "npm run clean:images && npm run clean:volumes",
+    "clean:images": "docker system prune -af",
+    "clean:volumes": "docker volume prune -f"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
