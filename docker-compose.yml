@@ -27,9 +27,8 @@ services:
       context: server
       dockerfile: Dockerfile
     volumes:
-      - ./server:/app
-      - /app/node_modules
-      - /app/prisma
+      - ./server:/usr/src/app
+      - /usr/src/app/node_modules
 
   client:
     container_name: tigercat_client
@@ -39,9 +38,9 @@ services:
       context: client
       dockerfile: Dockerfile
     volumes:
-      - ./client:/app
-      - /app/node_modules
-      - /app/.next
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
 
 volumes:
   postgres-data:
